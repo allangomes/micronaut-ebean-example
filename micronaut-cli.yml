@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: microebean
+---
+testFramework: kotlintest
+sourceLanguage: kotlin

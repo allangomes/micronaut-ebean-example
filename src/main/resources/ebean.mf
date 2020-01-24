@@ -1,0 +1,3 @@
+entity-packages: com.allangomes.microebean.models
+querybean-packages: com.allangomes.microebean.models
+profile-location: true
