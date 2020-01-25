@@ -1,0 +1,11 @@
+micronaut:
+  server:
+    port: 9950
+    netty:
+      worker:
+        threads: 1
+
+  executors:
+    io:
+      type: fixed
+      nThreads: 1

@@ -3,10 +3,12 @@ package com.allangomes.microebean.models
 import com.allangomes.microebean.models.query.QPerson
 import io.ebean.Finder
 import io.ebean.Model
+import io.micronaut.core.annotation.Introspected
 import javax.persistence.Entity
 import javax.persistence.Id
 
 @Entity
+@Introspected
 open class Person : Model()  {
 
     @Id

@@ -2,27 +2,29 @@ package com.allangomes.microebean.controllers
 
 import com.allangomes.microebean.models.Person
 import io.micronaut.http.annotation.*
+import java.util.concurrent.CompletableFuture
 import javax.inject.Singleton
 
 @Singleton
 @Controller("/person")
-open class EquipmentController {
+class PersonController {
 
     @Get
-    open fun index(): MutableList<Person> {
+    fun index(): MutableList<Person> {
         return Person.all()
     }
 
     @Get("/byName")
-    open fun byName(@QueryValue("name") name: String): Person? {
+    fun byName(@QueryValue("name") name: String): Person? {
         return Person.byName(name)
     }
 
-
     @Post
-    open fun save(@Body person: Person): Person {
-        person.save()
-        return person
+    fun save(@Body person: Person): CompletableFuture<Person> {
+        return CompletableFuture.supplyAsync {
+            person.save()
+            return@supplyAsync person
+        }
     }
 
 }

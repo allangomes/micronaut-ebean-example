@@ -27,13 +27,11 @@ class EBean {
     }
 
     @Bean
-    fun config(currentTenant: CurrentTenantProvider): ServerConfig {
-        val config = ServerConfig()
-        config.loadFromProperties()
-        config.tenantMode = TenantMode.DB
-        config.databasePlatform = PostgresPlatform()
-        config.currentTenantProvider = currentTenant
-        return config
+    fun config(currentTenant: CurrentTenantProvider) = ServerConfig().apply {
+        loadFromProperties()
+        tenantMode = TenantMode.DB
+        databasePlatform = PostgresPlatform()
+        currentTenantProvider = currentTenant
     }
 
     @Context

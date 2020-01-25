@@ -2,13 +2,12 @@ micronaut:
   application:
     name: microebean
 
-  server:
-    port: 9950
-
   multitenancy:
     tenantresolver:
       httpheader:
         enabled: true
+    propagation:
+      enabled: true
 
 datasource:
   default: db
@@ -18,3 +17,15 @@ datasource:
     password:
     databaseUrl: jdbc:postgresql://127.0.0.1:5432/tenants
     databaseDriver: org.postgresql.Driver
+
+
+  server:
+    port: 9950
+    netty:
+      worker:
+        threads: 1
+
+  executors:
+    io:
+      type: fixed
+      nThreads: 1
