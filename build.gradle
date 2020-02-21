@@ -36,7 +36,7 @@ dependencies {
     kapt "io.micronaut:micronaut-validation"
     kaptTest platform("io.micronaut:micronaut-bom:$micronautVersion")
     kaptTest "io.micronaut:micronaut-inject-java"
-    runtimeOnly "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     testImplementation "io.micronaut.test:micronaut-test-kotlintest"
@@ -45,6 +45,8 @@ dependencies {
     runtimeOnly "org.postgresql:postgresql:42.2.9"
     compile 'io.ebean:ebean:12.1.9'
     compile 'io.ebean:ebean-querybean:12.1.9'
+    compile 'io.ebean:ebean-migration:12.1.4'
+
     // query bean generation
     kapt 'io.ebean:kotlin-querybean-generator:12.1.9'
 

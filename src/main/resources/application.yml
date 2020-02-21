@@ -29,3 +29,11 @@ datasource:
     io:
       type: fixed
       nThreads: 1
+
+
+ebean.migration.run: true
+
+
+jackson:
+  serialization:
+    writeDatesAsTimestamps: false

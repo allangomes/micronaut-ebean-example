@@ -1,7 +1,3 @@
 entity-packages: com.allangomes.microebean.models
 querybean-packages: com.allangomes.microebean.models
 profile-location: true
-
-
-Mas e quando temos alguns pools de threads compartilhados e trabalhamos de forma completamente asyncrona?
-de fato não existe uma solução muito simples, mas felizmente o micronaut já nos dar um suporte para implementarmos
